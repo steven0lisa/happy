@@ -439,7 +439,8 @@ function resolveSessionFlavor(agentName: string): 'gemini' | 'opencode' | 'acp' 
   if (agentName === 'gemini') {
     return 'gemini';
   }
-  if (agentName === 'opencode') {
+  if (agentName === 'opencode' || agentName === 'claude') {
+    // 'claude' 伪装成 opencode 运行
     return 'opencode';
   }
   return 'acp';
